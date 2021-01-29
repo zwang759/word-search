@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Word Search</title>
+</head>
+<body>
+
+<div><h3>Word search</h3></div>
+<form th:action="@{/}" th:object="${word}" method="post">
+    <div>
+        <input type="text" name="word" th:field="*{word}">
+        <input type="submit" value="Search">
+    </div>
+</form>
+
+<table>
+    <tr>
+        <th>Word</th>
+    </tr>
+    <tr th:each="word : ${foundWords}">
+        <td><span th:text="${word.word}">Word</span></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
