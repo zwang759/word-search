@@ -16,12 +16,6 @@ public class SearchController {
     @Autowired
     WordRepository wordRepository;
 
-    //    @GetMapping("/")
-//    public String home(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-//        model.addAttribute("name", name);
-//        return "greeting";
-//    }
-//
     @GetMapping("/")
     public String wordSearch(Model model) {
         model.addAttribute("word", new Word());
